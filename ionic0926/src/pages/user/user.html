@@ -1,0 +1,24 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>User</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+	<ion-list>
+		<ion-item>
+			<ion-thumbnail item-start>
+				<div class="hidden-input">
+					<input type="file" (change)="selectImg($event)"/>
+					<img [src]="baseImg">
+				</div>				
+			</ion-thumbnail>
+			<h2>{{userName}}</h2>
+			<p>88888888888888</p>
+			<button ion-button clear item-end>View</button>
+		</ion-item>
+	</ion-list>
+</ion-content>
