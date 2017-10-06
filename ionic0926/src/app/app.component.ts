@@ -77,11 +77,13 @@ export class MyApp {
 					const username = res.attributes.username;
 					const tel = res.mobilePhoneNumber;
 					const email = res.attributes.email;
+					const image = res.attributes.image.attributes.url;
 					const userInfo = {
 						uid,
 						username,
 						tel,
-						email
+						email,
+						image
 					};
 					const uinfo = JSON.stringify(userInfo);
 					localStorage.setItem('user', uinfo);					

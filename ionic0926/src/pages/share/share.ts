@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,ChangeDetectorRef } from '@angular/core';
 import av from '../../app/getData';
 
 
@@ -7,26 +7,19 @@ import av from '../../app/getData';
 	templateUrl: 'share.html'
 })
 export class share {
-	qinfo = [];
-	constructor() {
+    Data:any = [];
+	constructor(public cd: ChangeDetectorRef) {
+		var _this = this;
 		const getQuan = new av.Query('uQuan');
 		getQuan.find().then(function(res) {
-			console.log(res)
-			const item = {};
-			const qimg:String = '';
-			const qctx:String = '';
-			const qtit:String = '';
-			item = {qimg,qctx,qtit}
-			for(let i=0;i<res.length;i++){
-				qimg = res[i].attributes.image.attributes.url;
-				qctx = res[i].attributes.context;
-				qtit = res[i].attributes.title;			
-				qinfo.push(item);				
-			}
-			console.log(qinfo)
+			console.log(res);
+			_this.Data = res;
+			_this.cd.detectChanges();
 		}, function(error) {
 
 		});
 	}
-
+    showQuan (){
+		
+	}
 }
