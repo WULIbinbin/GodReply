@@ -1,0 +1,18 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>粉丝列表</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content class="card-background-page">
+    <ion-list *ngFor="let item of Fans">
+		<ion-item>
+			<ion-thumbnail item-start>
+				<img [src]="item.attributes.uIcon" *ngIf="item.attributes.uIcon"/>
+			</ion-thumbnail>
+			<h2>{{item.attributes.username}}</h2>
+		  </ion-item>
+	</ion-list>	
+</ion-content>

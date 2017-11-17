@@ -14,7 +14,9 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
 .ion-page{background: #fff;}
 .login-in,.sign-In{margin:30px 0 10px 0;}
-.toast-wrapper{width:50%;-moz-border-radius: 8px;-webkit-border-radius: 8px;border-radius: 8px}
 .toast-message{text-align: center}
+.toast-md .toast-wrapper{width:70%;-moz-border-radius: 8px;-webkit-border-radius: 8px;border-radius: 8px;opacity: 0.8;}
+.header-md::after{height: 0;}

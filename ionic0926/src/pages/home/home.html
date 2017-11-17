@@ -1,0 +1,50 @@
+
+<ion-content page-home>
+  <ion-segment [(ngModel)]="HOME" fix-top>
+      <ion-segment-button value="HOT">
+        热门
+        <p class="border_nav_shot"></p>
+      </ion-segment-button>
+      <ion-segment-button value="FORCE">
+        关注
+        <p class="border_nav_shot"></p>
+      </ion-segment-button>
+  </ion-segment>
+       
+  <div [ngSwitch]="HOME" padding margin-top>
+    <ion-list *ngSwitchCase="'HOT'">      
+      <ion-item *ngFor="let item of forces">
+        <div class="userText">
+          <div class="userIcon" (click)="gotoUserInfo(item.attributes.uId)">
+            <img [src]="item.attributes.uImg" *ngIf="item.attributes.uImg">
+          </div>
+          <h2>{{item.attributes.uname}}</h2>
+          <p>{{item.attributes.artInfo}}</p>
+        </div>
+        <div class="userImg">
+          <div class="imglist" *ngFor="let img of item.attributes.artImg, let i = index;" [ngStyle]="">
+            <img [src]="basePath+'img/loading.gif'" [lazyImg]="img" [ngStyle]="{width:item.attributes.artImg.length==1?'90%':'94%'}"/>
+          </div>
+          <!-- {width:item.attributes.artImg.length==1?'70%':'48%'} -->
+        </div>
+        <br/>
+        <span padding>{{item.createdAt}}</span>  
+      </ion-item>
+    </ion-list>  
+    <ion-list *ngSwitchCase="'FORCE'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="">
+        </ion-thumbnail>
+        <h2></h2>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-fab bottom right>
+      <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+      <ion-fab-list side="top">        
+        <button ion-fab><ion-icon name="color-palette"></ion-icon></button>
+        <button ion-fab (click)="gotocreate()"><ion-icon name="create"></ion-icon></button>
+      </ion-fab-list>
+  </ion-fab>
+</ion-content>

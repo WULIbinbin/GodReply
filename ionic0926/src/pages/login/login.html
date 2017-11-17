@@ -1,0 +1,47 @@
+<ion-content padding page-login>
+	<div class="login-in" *ngIf="signIn" padding>
+		<h2 padding>用户登录</h2>
+		<div class="login_div">
+			<ion-item>
+				<ion-label floating>用&nbsp;&nbsp;&nbsp;户</ion-label>
+				<ion-input type="text" id="username1" (keyup)="onKeyUsername($event)"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label floating>密&nbsp;&nbsp;&nbsp;码</ion-label>
+				<ion-input type="password" id="password1" (keyup)="onKeyPassword($event)"></ion-input>
+			</ion-item>
+			<button ion-button block (click)="ulogin()" class="login-in">登录</button>
+			<button ion-button block (click)="isUlogin()" color="light" *ngIf="isSignIn">注册</button>
+		</div>
+	</div>
+	<div class="login-in" *ngIf="!signIn" padding>
+		<h2 padding>用户注册</h2>
+		<div class="login_div">
+			<ion-item>
+				<ion-label>用&nbsp;&nbsp;&nbsp;户</ion-label>
+				<ion-input type="text" id="username2" (keyup)="onKeyUsername($event)" placeholder="不少于6位数字或字母" min="6"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label>密&nbsp;&nbsp;&nbsp;码</ion-label>
+				<ion-input type="password" id="password2" (keyup)="onKeyPassword($event)" placeholder="不少于6位数字或字母" min=6></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label>邮&nbsp;&nbsp;&nbsp;箱</ion-label>
+				<ion-input type="email" id="email" (keyup)="onKeyEmail($event)" placeholder="联系邮箱" min=6></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label>电&nbsp;&nbsp;&nbsp;话</ion-label>
+				<ion-input type="tel" id="tel" (keyup)="onKeyTel($event)" placeholder="联系电话" min=6></ion-input>
+			</ion-item>			
+			<button ion-button block (click)="getUser()" color="light" class="sign-In">注册</button>
+			<button ion-button block (click)="backUser()">返回登录</button>
+		</div>
+	</div>
+	<div class="choose-img" *ngIf="!getIcon" padding>
+		<p padding>请选择你的个人头像</p>
+		<img [src]="uImg" alt="">
+		<button ion-button block (click)="getUicon(0)" color="light">从相册选择</button>
+		<button ion-button block (click)="getUicon(1)" color="light">拍照选择</button>
+		<button ion-button block (click)="selectImg()">确认</button>
+	</div>
+</ion-content>

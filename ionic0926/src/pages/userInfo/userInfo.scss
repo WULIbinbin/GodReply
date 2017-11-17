@@ -1,0 +1,22 @@
+[personal-page]{
+    .forcebtn{
+        height: 2.5rem;
+        float: right;
+        margin: 0;
+    }
+    .button-small-md{
+        font-size: 1.5rem;
+        padding: 0;
+        margin: 0;
+    }
+    .col{
+        padding: 0;
+        margin:5px 10px 5px 0;
+    }
+    [gray]{
+        color:rgba(43, 41, 41, 0.65);
+    }
+    [orange]{
+        color:rgba(252, 99, 4, 0.699);
+    }
+}

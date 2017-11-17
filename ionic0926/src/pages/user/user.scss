@@ -1,14 +1,35 @@
-page-user {
-
-}
-.hidden-input{
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-.hidden-input input{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
+[page-user] {
+    $border_btm:rgba(40, 40, 40, 0.212);
+    
+    ion-thumbnail .hidden-input{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    ion-thumbnail .hidden-input input{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+    .content-md .myInfo{
+        border-bottom:1px solid $border_btm; 
+    }
+    .myFollow{
+        color:rgba(255, 0, 0, 0.432);
+    }
+    .myFans{
+        color:rgba(153, 0, 255, 0.432);
+    }
+    .list-md {
+        padding: 4px 0;
+        margin: 0 !important;
+        border-bottom:1px solid $border_btm; 
+    }
+    .myForce span:first-of-type{
+        margin-right: 10px;
+    }
+    .myForce span:last-of-type{
+        margin-left: 10px;
+    }
 }

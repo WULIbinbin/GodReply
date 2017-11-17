@@ -7,18 +7,43 @@
 	</ion-navbar>
 </ion-header>
 
-<ion-content padding>
-	<ion-list>
+<ion-content padding page-user>
+	<ion-refresher (ionRefresh)="doRefreshMy($event)">
+		<ion-refresher-content
+		pullingIcon="arrow-dropdown"
+		pullingText="下拉刷新"
+		refreshingSpinner="circles"
+		refreshingText="正在刷新">
+		</ion-refresher-content>
+	</ion-refresher>	
+	<ion-list class="myInfo">
 		<ion-item>
 			<ion-thumbnail item-start>
-				<div class="hidden-input">
-					<input type="file" (change)="selectImg($event)"/>
-					<img [src]="baseImg">
+				<div class="hidden-input" (click)="presentActionSheet(event)">
+					<img [src]="baseImg" class="imgCho">
 				</div>				
 			</ion-thumbnail>
 			<h2>{{userName}}</h2>
-			<p>88888888888888</p>
-			<button ion-button clear item-end>View</button>
+			<p>{{userPhone}}</p>
+			<p class="myForce"><span>关注：{{MyFollow.length}}</span>|<span>粉丝：{{Fans.length}}</span></p>
 		</ion-item>
 	</ion-list>
+	<ion-list (click)="gotofollows()">
+		<ion-item>
+			<ion-icon name="heart" item-start class="myFollow"></ion-icon>
+			我的关注			
+		</ion-item>
+	</ion-list>
+	<ion-list (click)="gotofans()">
+		<ion-item>
+			<ion-icon name="contacts" item-start class="myFans"></ion-icon>
+			我的粉丝		
+		</ion-item>
+	</ion-list>
+	<ion-list (click)="gotologin()">
+		<ion-item>
+			<ion-icon name="contacts" item-start class="myFans"></ion-icon>
+			切换账号		
+		</ion-item>
+	</ion-list>	
 </ion-content>

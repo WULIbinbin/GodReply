@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>写写</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content write>
+    <ion-textarea autocomplete="on" rows="6" padding [(ngModel)]="artInfo"></ion-textarea>
+    <p class="writeWarn">最多添加四张图片</p>
+    <div class="img_choose" padding>			
+        <div class="hidden-input" (click)="presentActionSheet($event)">
+            <img [src]="basePath+'img/add.png'" alt="" class="imgCho">
+        </div>
+        <div class="hidden-input" (click)="presentActionSheet($event)">
+            <img [src]="basePath+'img/add.png'" alt="" class="imgCho">
+        </div>
+        <div class="hidden-input" (click)="presentActionSheet($event)">
+            <img [src]="basePath+'img/add.png'" alt="" class="imgCho">
+        </div>
+        <div class="hidden-input" (click)="presentActionSheet($event)">
+            <img [src]="basePath+'img/add.png'" alt="" class="imgCho">
+        </div>
+        										
+    </div>
+    <ion-item>
+        <ion-label>是否设置为不公开</ion-label>
+        <ion-toggle [(ngModel)]="doNotOpen" checked="false"></ion-toggle>
+    </ion-item>
+    <div class="writeSub" padding>
+        <button ion-button block padding (click)="getImg($event)">发布</button>
+    </div>
+        
+        <!-- <div padding-top>
+          <button ion-button block color="light" (click)="getPicture(0)">从相册选一张</button>
+        </div>
+        <div padding-top>
+          <button ion-button block color="light" (click)="getPicture(1)">拍一张照片</button>
+        </div>
+        <div padding-top>
+          
+        </div> -->
+        {{avatarPath}}
+</ion-content>

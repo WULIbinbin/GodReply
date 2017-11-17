@@ -1,0 +1,92 @@
+[page-home]{
+    .userIcon,.userIcon>img{  
+        float: left;
+        height:60px;
+        width: 60px;
+    }
+    img{max-width: 1000% !important;}
+    .userIcon{
+        margin-right: 10px;
+    }
+    .item-md,.item-inner,.item-md.item-block .item-inner{
+        padding: 0;
+    }
+    .label-md{
+        margin: 10px 0;
+    }
+    .userText{
+        width: 100%;
+        min-height: 60px;
+        display: inline-block;
+        float: left;
+    }
+    .userImg{
+        width: 100%;
+        padding-left: 70px;
+        display: inline-block;
+        float: left;
+        overflow: hidden;
+    }
+    .imglist{
+        display: inline-block;
+        float: left;
+        margin-right: 2%;
+        overflow: hidden;
+        position: relative;
+        height: 100px;
+        width:100px;     
+    }
+    .imglist img{
+        position: absolute;
+        display: block;
+        margin: 0 auto;
+    }
+    .swiper-slide{
+        overflow: scroll;
+        margin-top:40px; 
+    }
+    .slide-zoom{
+        height: 100%;
+    }
+    .segment-md .segment-button.segment-activated{
+        background-color: #488aff !important;
+    }
+    .segment-md .segment-button{
+        border-bottom-color:#488aff;
+        text-align: center;
+        color: #fff;
+        font-size: 1.4rem;
+        height: 4.4rem;
+        line-height:4.2rem;
+        border-bottom-width:0;
+        background-color: #488aff !important;
+    }   
+    .border_nav_shot{
+        height: 4px;
+        width: 10%;
+        background-color: #488aff;
+        margin: 0;
+        position: absolute;
+        bottom: 6px;
+        left: 45%;
+    }
+    .segment-activated .border_nav_shot{
+        background-color: #fff;
+    }
+    .segment-md{
+        background-color: #488aff;
+    }
+    [fix-top]{
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 100;
+    }
+    [margin-top]{
+        margin-top: 60px !important;
+    }
+}
+ion-app.md [padding], ion-app.md [padding] .scroll-content{
+    padding: 0 8px;
+}
+

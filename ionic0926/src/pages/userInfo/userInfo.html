@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            {{username}}的资料
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content personal-page>
+        <ion-card>
+            <img [src]="basePath+'img/loading.gif'" [lazyImg]="uicon"/>
+            <ion-card-content>
+                <ion-card-title>
+               <span icon-left>{{username}}</span>
+               <button ion-button outline (click)="toForce()" class="forcebtn">{{forceThen}}</button>
+                </ion-card-title>
+                <ion-row>
+                    <ion-col>
+                        <button ion-button icon-left clear small>
+                            <ion-icon name="ios-happy" orange></ion-icon>
+                            <div gray>{{Fans}}位粉丝</div>
+                        </button>
+                    </ion-col>
+                    <ion-col>
+                        <button ion-button icon-left clear small>
+                            <ion-icon name="md-thumbs-up" orange></ion-icon>
+                            <div gray>4个点赞</div>
+                        </button>
+                    </ion-col>
+                    <ion-col>
+                        <button ion-button icon-left clear small>
+                            <ion-icon name="md-contacts" orange></ion-icon>
+                            <div gray>4条说说</div>
+                        </button>
+                      </ion-col>                   
+                  </ion-row>
+            </ion-card-content>
+        </ion-card>
+</ion-content>

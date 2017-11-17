@@ -8,13 +8,13 @@ import av from '../../app/getData';
 })
 export class share {
     Data:any = [];
-	constructor(public cd: ChangeDetectorRef) {
+	constructor(public cds: ChangeDetectorRef) {
 		var _this = this;
 		const getQuan = new av.Query('uQuan');
 		getQuan.find().then(function(res) {
 			console.log(res);
 			_this.Data = res;
-			_this.cd.detectChanges();
+			_this.cds.detectChanges();
 		}, function(error) {
 
 		});
