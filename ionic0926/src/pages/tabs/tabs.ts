@@ -1,9 +1,6 @@
-import { Component, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { NavController, Tabs,Platform } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { Tabs,Platform } from 'ionic-angular';
 import { home } from '../home/home';
-import { fans } from '../fans/fans';
-import { follows } from '../follows/follows';
-import { login } from '../login/login';
 import { share } from '../share/share';
 import { user } from '../user/user';
 import { BackButtonService } from '../../providers/goBackBtn';

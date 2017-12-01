@@ -1,8 +1,8 @@
 import { Component ,ChangeDetectorRef } from '@angular/core';
-import { NavController, ToastController, AlertController, NavParams,Tabs,Platform } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import av from '../../app/getData';
-import { home } from '../home/home';
-import { imgLoading } from '../../providers/imgLoading';
+//import { home } from '../home/home';
+//import { imgLoading } from '../../providers/imgLoading';
 import { imgload } from '../../providers/imgload';
 
 @Component({
@@ -16,7 +16,7 @@ export class userInfo {
     Fans:string = '';
     basePath:string;
     forceThen:String = '关注';
-	constructor(private imgUinfo:imgload,public uidparam:NavParams,public cdsx: ChangeDetectorRef,public uidnav:NavController) {
+	constructor(public imgUinfo:imgload,public uidparam:NavParams,public cdsx: ChangeDetectorRef,public uidnav:NavController) {
         let that = this;
         this.basePath = imgUinfo.imgUrl();
         const myUid = JSON.parse(localStorage.getItem('user'));

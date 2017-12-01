@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef,Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { ToastController,LoadingController } from 'ionic-angular';
 import {Camera} from 'ionic-native';
 

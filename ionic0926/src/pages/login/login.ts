@@ -1,5 +1,5 @@
 import { Component, ChangeDetectorRef,ViewChild } from '@angular/core';
-import { NavController, ToastController, AlertController, NavParams,Tabs,Platform,ViewController } from 'ionic-angular';
+import { NavController, ToastController, AlertController, NavParams,Tabs,Platform } from 'ionic-angular';
 import av from '../../app/getData';
 import { user } from '../user/user';
 import { home } from '../home/home';
@@ -24,7 +24,7 @@ const addUser = new User();
 	getIcon:boolean = true;
 	uImg:string = '';
 	@ViewChild('mainTabs') tabRef: Tabs;	
-    constructor(private viewCtrl: ViewController,private GetPicLogin: getPicService,public backButtonService: BackButtonService,public platform:Platform,public navparam:NavParams,public navHome: NavController,public alertCtrl: AlertController, public toastCtrl: ToastController, public sf: ChangeDetectorRef) {
+    constructor(private GetPicLogin: getPicService,public backButtonService: BackButtonService,public platform:Platform,public navparam:NavParams,public navHome: NavController,public alertCtrl: AlertController, public toastCtrl: ToastController, public sf: ChangeDetectorRef) {
 			if(navparam.get('isRelogin')){
 				this.fromUser = navparam.get('isRelogin');
 			}
@@ -116,8 +116,8 @@ const addUser = new User();
 	}
 	selectImg() {
 		const userSes = localStorage.getItem('user');
-		const userLocal = localStorage.getItem('userLocal');
-		const uInfo = JSON.parse(userSes);
+		// const userLocal = localStorage.getItem('userLocal');
+		// const uInfo = JSON.parse(userSes);
 		const that = this;
 		const imgName = new Date().getFullYear() + 'img' + Math.ceil(Math.random() * 20000 + 10000) + '.jpeg';
 		if(this.uImg==''){

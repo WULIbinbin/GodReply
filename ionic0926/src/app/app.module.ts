@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ErrorHandler } from '@angular/core';
+import { NgModule, ErrorHandler,enableProdMode } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import {FormsModule} from '@angular/forms';
+//import {FormsModule} from '@angular/forms';
 import { MyApp } from './app.component';
 import { home } from '../pages/home/home';
 import { user } from '../pages/user/user';
@@ -18,8 +18,10 @@ import { getPicService } from '../providers/getPicService';
 import { BackButtonService } from '../providers/goBackBtn';
 import { imgload } from '../providers/imgload';
 import { imgLoading } from '../providers/imgLoading';
-import { imgCut } from '../providers/picShow';
+import { imgShow } from '../providers/showImg';
 //新组件要放declarations和entryComponents，新组件的import命名和他的ts的classname一致
+//自定义指令放declarations和providers
+enableProdMode();
 @NgModule({
 	declarations: [
 		MyApp,
@@ -33,7 +35,7 @@ import { imgCut } from '../providers/picShow';
 		login,
 		userInfo,
 		imgLoading,
-		imgCut
+		imgShow
 	],
 	imports: [
 		BrowserModule,
@@ -66,7 +68,7 @@ import { imgCut } from '../providers/picShow';
 		BackButtonService,
 		imgload,
 		imgLoading,
-		imgCut		
+		imgShow		
 	]
 })
 export class AppModule {}

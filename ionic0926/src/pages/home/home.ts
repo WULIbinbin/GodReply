@@ -5,7 +5,8 @@ import { write } from '../write/write';
 import { login } from '../login/login';
 import { userInfo } from '../userInfo/userInfo';
 import { imgload } from '../../providers/imgload';
-import { imgLoading } from '../../providers/imgLoading';
+//import { imgLoading } from '../../providers/imgLoading';
+//import { imgShow } from '../../providers/showImg';
 
 @Component({
   selector: 'home',
@@ -17,7 +18,7 @@ export class home {
   forceThen:String = '关注';
   HOME:String = 'HOT';
   basePath:string;
-  constructor(private imghome:imgload, public navCtrl: NavController, public cd: ChangeDetectorRef) {    
+  constructor(public imghome:imgload, public navCtrl: NavController, public cd: ChangeDetectorRef) {    
     this.basePath = imghome.imgUrl();
     const nUser = new av.Query('uArtive');
     const that = this;

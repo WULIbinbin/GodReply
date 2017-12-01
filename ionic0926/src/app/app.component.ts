@@ -1,12 +1,6 @@
 import { Component, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { Tabs, NavController, Nav, AlertController, ToastController } from 'ionic-angular';
-import {StatusBar, Splashscreen} from 'ionic-native';
-import { home } from '../pages/home/home';
-import { user } from '../pages/user/user';
-import { share } from '../pages/share/share';
-import { login } from '../pages/login/login';
+import { Nav, AlertController, ToastController } from 'ionic-angular';
 import { TabsPage } from '../pages/tabs/tabs';
-import av from './getData';
 
 @Component({
 	templateUrl: 'app.html'

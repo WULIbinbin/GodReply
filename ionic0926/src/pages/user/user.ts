@@ -1,5 +1,5 @@
 import { Component, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { NavController, Tabs,ActionSheetController,ViewController } from 'ionic-angular';
+import { NavController, Tabs,ActionSheetController } from 'ionic-angular';
 import av from '../../app/getData';
 import { home } from '../home/home';
 import { fans } from '../fans/fans';
@@ -20,7 +20,7 @@ export class user {
 	userPhone =  localStorage.getItem('user')?JSON.parse(localStorage.getItem('user')).tel:'';
 	@ViewChild('mainTabs') tabRef: Tabs;
 	tab1Root: any = home;
-	constructor(private viewCtrl: ViewController,private GetPicUser: getPicService,public actionSheetCtrl: ActionSheetController,public navCtrl: NavController, public changeDetectorRef: ChangeDetectorRef) {		
+	constructor(private GetPicUser: getPicService,public actionSheetCtrl: ActionSheetController,public navCtrl: NavController, public changeDetectorRef: ChangeDetectorRef) {		
 		this.getFans();	
 	}
 	getFans(){
@@ -68,8 +68,8 @@ export class user {
 	}
 	selectImg(img64) {
 		const userSes = localStorage.getItem('user');
-		const userLocal = localStorage.getItem('userLocal');
-		const uInfo = JSON.parse(userSes);
+		//const userLocal = localStorage.getItem('userLocal');
+		//const uInfo = JSON.parse(userSes);
 		const that = this;
     const imgName = new Date().getFullYear() + 'img' + Math.ceil(Math.random() * 20000 + 10000) + '.jpeg';
 		let fileUser = new av.File(imgName, { base64: img64});

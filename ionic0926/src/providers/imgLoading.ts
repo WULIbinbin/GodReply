@@ -1,18 +1,13 @@
-import { Injectable,Directive, ElementRef,Input,HostListener } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Directive, ElementRef,Input,HostListener } from '@angular/core';
 
 @Directive({
     selector:'img[lazyImg]'
   })
-  export class imgLoading{
+  export class imgLoading{   
     @Input('lazyImg')imgUrl:string;
-    constructor(el:ElementRef){
-        let u = navigator.userAgent;
-        let isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1 || u.indexOf("Linux") > -1; //android终端        
-        setTimeout(()=>{
-          
-          let elp:HTMLElement = el.nativeElement.parentNode;
-          console.log(elp.clientWidth)          
+    constructor(el:ElementRef){       
+        setTimeout(()=>{          
+          let elp:HTMLElement = el.nativeElement.parentNode;         
           el.nativeElement.style = 'opacity:1;';          
           let img = new Image();
           let styles:string;
@@ -33,5 +28,11 @@ import { Platform } from 'ionic-angular';
             },200)
           }
         },800)   
+    }
+    @HostListener('click')
+    onClick(){
+      console.log(this.imgUrl)
+      let img = new Image();
+      img.src = this.imgUrl
     }
   }

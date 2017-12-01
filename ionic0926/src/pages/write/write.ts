@@ -1,8 +1,8 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
-import { NavController, ToastController,LoadingController,ViewController,ActionSheetController } from 'ionic-angular';
+import { NavController, ToastController,ActionSheetController } from 'ionic-angular';
 import av from '../../app/getData';
 import { home } from '../home/home';
-import {Camera} from 'ionic-native';
+//import {Camera} from 'ionic-native';
 import { getPicService } from '../../providers/getPicService';
 import { imgload } from '../../providers/imgload';
 
@@ -11,17 +11,12 @@ import { imgload } from '../../providers/imgload';
     templateUrl: 'write.html'
   })
   export class write {
-    imgArr:any[] = []; 
-    events:object = {};
+    imgArr:any[] = [];
     artInfo:String = '';
-    location:String = location.href;
     doNotOpen = false;
-    isChange: boolean = false;//头像是否改变标识
-    avatarPath: string = '';//用户默认头像
-    imageBase64: string;//保存头像base64,用于上传
     choImg:string = '';
     basePath:string = '';  
-    constructor(private imgwrite:imgload,private viewCtrl: ViewController,private GetPicService: getPicService,public toastCtrl: ToastController,private loadingCtrl: LoadingController,public nav: NavController,public cdw: ChangeDetectorRef,public actionSheetCtrl: ActionSheetController) {
+    constructor(public imgwrite:imgload,public GetPicService: getPicService,public toastCtrl: ToastController,public nav: NavController,public cdw: ChangeDetectorRef,public actionSheetCtrl: ActionSheetController) {
         this.basePath = imgwrite.imgUrl();
     }
     presentToast(msg) {

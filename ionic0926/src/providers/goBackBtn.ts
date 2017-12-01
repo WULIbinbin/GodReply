@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Platform, ToastController, App, NavController, Tabs,Keyboard } from 'ionic-angular';
+import { Platform, ToastController, App, Tabs,Keyboard } from 'ionic-angular';
 import { home } from '../pages/home/home';
 import { share } from '../pages/share/share';
 import { user } from '../pages/user/user';

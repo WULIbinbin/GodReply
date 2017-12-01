@@ -1,6 +1,7 @@
 {
   "rules": {
     "no-duplicate-variable": true,
+    "no-trailing-whitespace": false,
     "no-unused-variable": [
       true
     ]
