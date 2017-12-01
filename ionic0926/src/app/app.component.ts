@@ -9,8 +9,8 @@ export class MyApp {
 	rootPage = TabsPage;	
 	@ViewChild('myNav') nav: Nav;	
 	backButtonPressed: boolean = false;
-	constructor(public alertCtrl: AlertController, public toastCtrl: ToastController, public ssx: ChangeDetectorRef) {
-		
+	constructor(public alertCtrl: AlertController, public toastCtrl: ToastController, public ssx: ChangeDetectorRef) {		
+	
 	}		
 	presentAlert(text) {
 		const alert = this.alertCtrl.create({
