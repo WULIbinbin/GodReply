@@ -1,6 +1,7 @@
 import { Component, ViewChild, ChangeDetectorRef } from '@angular/core';
-import { Nav, AlertController, ToastController } from 'ionic-angular';
+import { Nav, AlertController, ToastController, Platform } from 'ionic-angular';
 import { TabsPage } from '../pages/tabs/tabs';
+import { StatusBar, Splashscreen} from 'ionic-native'
 
 @Component({
 	templateUrl: 'app.html'
@@ -9,8 +10,11 @@ export class MyApp {
 	rootPage = TabsPage;	
 	@ViewChild('myNav') nav: Nav;	
 	backButtonPressed: boolean = false;
-	constructor(public alertCtrl: AlertController, public toastCtrl: ToastController, public ssx: ChangeDetectorRef) {		
-	
+	constructor(public plat: Platform,public alertCtrl: AlertController, public toastCtrl: ToastController, public ssx: ChangeDetectorRef) {		
+	    plat.ready().then(()=>{
+			StatusBar.styleDefault();
+			Splashscreen.hide();
+		});
 	}		
 	presentAlert(text) {
 		const alert = this.alertCtrl.create({
