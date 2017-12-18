@@ -1,4 +1,5 @@
 [page-home]{
+    $bodyheight:100%;
     .userIcon,.userIcon>img{  
         float: left;
         height:60px;
@@ -43,7 +44,6 @@
     }
     .swiper-slide{
         overflow: scroll;
-        margin-top:40px; 
     }
     .slide-zoom{
         height: 100%;
@@ -82,8 +82,45 @@
         left: 0;
         z-index: 100;
     }
-    [margin-top]{
+    [margin-top-60]{
         margin-top: 60px !important;
+    }
+    .top_home_Title{
+        height: 50px;
+        float: left;
+        width: 100%;
+        background:#488aff;
+        overflow: hidden; 
+    }
+    .top_home_Title>ul{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    .top_home_Title>ul>li{
+        float: left;
+        height: 50px;
+        margin: 0 10px;     
+        width: 60px;
+        line-height: 51px;
+        text-align: center;
+        font-size: 14px;
+        color: rgba(7, 7, 7, 0.603);
+    }
+    .on-slide{
+        background: rgba(13, 104, 241, 0.76) !important;
+        color: #fff !important;
+        border-bottom:4px solid #fff;
+        line-height: 51px !important;
+        font-size: 16px !important;
+    }
+    .ion-slides{
+        float: left;
+    }
+    .ion-slide>.ion-list{
+        float: left;
+        margin-top: 50px;
     }
 }
 ion-app.md [padding], ion-app.md [padding] .scroll-content{

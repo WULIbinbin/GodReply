@@ -20,7 +20,7 @@ export class BackButtonService {
     let isPage3= currentCmp === user;
     if (isPage1 || isPage2 || isPage3 ) {  
         this.checkPage = true  
-      } else {  
+      } else {
         this.checkPage = false  
       } 
   }

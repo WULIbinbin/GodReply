@@ -31,7 +31,7 @@ import { Directive, ElementRef,Input,HostListener } from '@angular/core';
     }
     @HostListener('click')
     onClick(){
-      console.log(this.imgUrl)
+      //console.log(this.imgUrl)
       let img = new Image();
       img.src = this.imgUrl
     }

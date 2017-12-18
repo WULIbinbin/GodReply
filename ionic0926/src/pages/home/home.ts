@@ -1,5 +1,5 @@
 import { Component, ChangeDetectorRef,ViewChild } from '@angular/core';
-import { NavController,Tabs } from 'ionic-angular';
+import { NavController,Tabs,Slides } from 'ionic-angular';
 import av from '../../app/getData';
 import { write } from '../write/write';
 import { login } from '../login/login';
@@ -14,9 +14,9 @@ import { imgload } from '../../providers/imgload';
 })
 export class home {
   @ViewChild('mainTabs') tabRef: Tabs;
+  @ViewChild(Slides) slides: Slides;
   forces:any[] = [];
-  forceThen:String = '关注';
-  HOME:String = 'HOT';
+  slideIndex:number = 0;
   basePath:string;
   constructor(public imghome:imgload, public navCtrl: NavController, public cd: ChangeDetectorRef) {    
     this.basePath = imghome.imgUrl();
@@ -33,10 +33,10 @@ export class home {
     }  
     nUser.find().then(function(res){
        that.forces = res.reverse();
-       console.log(that.forces)
        that.cd.detectChanges();
     },function(err){
-    });    
+    });
+     
   }
   gotoUserInfo(uid){
     this.navCtrl.push(userInfo,{
@@ -47,5 +47,15 @@ export class home {
     this.navCtrl.push(write,{
 			item1:''
 		});
+  }
+  slideChanged(){
+    let currentIndex = this.slides.getActiveIndex();
+    if(currentIndex>2){
+      currentIndex = 2;
+    }
+    this.slideIndex = currentIndex;
+  }
+  gotoSlide(i){
+    this.slides.slideTo(i, 200, true);
   }
 }
