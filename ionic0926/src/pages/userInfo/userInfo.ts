@@ -13,6 +13,7 @@ export class userInfo {
     username:string = '';
     uicon:string = '';
     uid:string = '';
+    myuid:string = '';
     Fans:string = '';
     basePath:string;
     forceThen:String = '关注';
@@ -20,15 +21,18 @@ export class userInfo {
         let that = this;
         this.basePath = imgUinfo.imgUrl();
         const myUid = JSON.parse(localStorage.getItem('user'));
-        if(uidparam.get('uid')){
-            this.uid = uidparam.get('uid');
+        this.uid = uidparam.get('uid');
+        this.myuid = myUid.uid;
+        if(this.uid==this.myuid){
+            this.forceThen = '自己'
+        }
+        if(uidparam.get('uid')){            
             const getUser = new av.Query('_User');
             getUser.get(this.uid).then(function(res) {
                 that.uid = res.id;
                 that.username = res.attributes.username;
                 if(res.attributes.uIcon){
                     that.uicon = res.attributes.uIcon;
-                    console.log(that.uicon)
                 }
                 that.cdsx.detectChanges();
             }, function(error) {
@@ -37,7 +41,6 @@ export class userInfo {
             const fans = av.User.current().followerQuery();//new av.Query('_Follower');           
             fans.include('follower');
             fans.equalTo('user',{className:'_User',objectId:this.uid,__type:'Pointer'});
-            console.log(fans)
             fans.find().then(function(follow){
                 that.Fans = follow.length; 
                 for(let i in follow){

@@ -16,6 +16,7 @@
               </div>
               <h2>{{item.attributes.uname}}</h2>
               <p>{{item.attributes.artInfo}}</p>
+              {{disView}}{{item.id}}
             </div>
             <div class="userImg">
               <div class="imglist" *ngFor="let img of item.attributes.artImg, let i = index;" [ngStyle]="">
@@ -23,8 +24,32 @@
               </div>
               <!-- {width:item.attributes.artImg.length==1?'70%':'48%'} -->
             </div>
-            <br/>
-            <span padding>{{item.createdAt}}</span>  
+            <div class="userdiscuss">
+                <ion-row>
+                    <ion-col>
+                        <button ion-button icon-left clear small>
+                            <ion-icon name="md-thumbs-up" orange></ion-icon>
+                            <div gray>点赞</div>
+                        </button>
+                    </ion-col> 
+                    <ion-col>
+                        <button ion-button icon-left clear small (click)="discussBtn(item.attributes.uId,item.id)">
+                            <ion-icon name="ios-happy" orange></ion-icon>
+                            <div gray>评论</div>
+                        </button>
+                    </ion-col>                                    
+                </ion-row>
+            </div>
+            <div class="userdiscuss-view" [ngStyle]="{display:disView==item.id?'block':'none'}">
+              <!-- <div class="show-discuss">
+                <p><span>uid</span><span>小伙子666</span></p>
+                <p><span>uid</span><span>小伙子666</span></p>
+                <p><span>uid</span><span>小伙子666</span></p>
+              </div> -->
+              <div class="add-discuss">
+                <p><span>to {{item.attributes.uname}}:</span><input type="text"></p>
+              </div>
+            </div>  
           </ion-item>
         </ion-list>
     </ion-slide>

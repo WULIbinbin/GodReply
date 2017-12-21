@@ -18,6 +18,7 @@ export class home {
   forces:any[] = [];
   slideIndex:number = 0;
   basePath:string;
+  disView:string = '';
   constructor(public imghome:imgload, public navCtrl: NavController, public cd: ChangeDetectorRef) {    
     this.basePath = imghome.imgUrl();
     const nUser = new av.Query('uArtive');
@@ -37,6 +38,10 @@ export class home {
     },function(err){
     });
      
+  }
+  discussBtn(uid,tid){
+    this.disView = tid;
+    console.log(tid,uid)
   }
   gotoUserInfo(uid){
     this.navCtrl.push(userInfo,{

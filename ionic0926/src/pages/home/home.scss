@@ -122,6 +122,50 @@
         float: left;
         margin-top: 50px;
     }
+    .userdiscuss{
+        width:40%;
+        margin-left: 60%;
+        height: 2em;
+        float: left;
+    }
+    .button-small-md{
+        height: 2em;
+        padding: 0;
+        margin: 0;
+    }
+    .col{
+        padding: 0;
+    }
+    .userdiscuss-view{
+        width: 80%;
+        margin:0 5% 0 15%;
+        height: auto;
+        min-height: 27px;
+        float: left;
+        background: rgba(156, 154, 154, 0.425);
+        border:none;
+        display: none;
+    }
+    .show-discuss,.add-discuss{
+        width: 100%;
+        float: left;
+    }
+    .show-discuss p,.add-discuss p{
+        width: 90%;
+        margin: 4px 5% 0 5%;
+    }
+    .show-discuss p span:nth-of-type(1),.add-discuss p span:nth-of-type(1){
+        color: rgba(84, 125, 240, 0.884);
+        margin-right: 10px;
+        float: left;
+    }
+    .show-discuss p span:nth-of-type(2){
+        color: rgba(19, 20, 20, 0.863);
+    }
+    .add-discuss p input{
+        border: none;
+        background: rgba(189, 187, 187, 0.548);
+    }
 }
 ion-app.md [padding], ion-app.md [padding] .scroll-content{
     padding: 0 8px;
